@@ -1,0 +1,6 @@
+.env
+*.pyc
+__pycache__/
+.DS_Store
+dbt/finance/target/
+dbt/finance/dbt_packages/
