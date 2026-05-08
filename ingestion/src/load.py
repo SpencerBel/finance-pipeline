@@ -11,6 +11,8 @@ def load_prices(df: pd.DataFrame):
     engine = get_engine()
     create_raw_schema(engine)
     
+    # Raw schema stores data exactly as received from the API. 
+    # No cleaning/transforming happens here, dbt's job
     df.to_sql(
         name="stock_prices",
         schema="raw",

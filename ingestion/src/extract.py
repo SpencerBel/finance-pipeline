@@ -10,7 +10,8 @@ def extract_prices(period="1y"):
         print(f"Extracting {ticker}...")
         df = yf.download(ticker, period=period, auto_adjust=True, progress=False)
         df = df.reset_index()
-        # Flatten MultiIndex columns if present
+        # Newer versions of yfinance return a MultiIndex where each column
+        # is a tuple instead of a plain string. 
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = [col[0].lower() for col in df.columns]
         else:
