@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stock_daily_returns
+    description: "Daily percentage return for each ticker"
+    config:
+      schema: marts
+
+  - name: stock_moving_averages
+    description: "50 and 200 day moving averages for each ticker"
+    config:
+      schema: marts
